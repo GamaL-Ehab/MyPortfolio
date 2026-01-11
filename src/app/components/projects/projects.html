@@ -1,4 +1,4 @@
-<section class="my-10">
+<section class="my-10 py-10 overflow-hidden">
     <div class="lg:w-3/4 mx-auto">
         <h2 class="flex items-center gap-2 text-4xl font-bold">
             <a href="#projects">
@@ -35,18 +35,19 @@
                         </div>
                         <p class="my-3">{{p.shortDesc}}
                         </p>
-                        <div class="flex justify-between items-center">
-                            <ul class="flex gap-2">
-                                <li class="font-bold">{{p.topTechs[0]}}</li>
-                                <li class="font-semibold">{{p.topTechs[1]}}</li>
-                                <li>{{p.topTechs[2]}}</li>
-                            </ul>
-                            <button (click)="getIndex($index)" class="btn btn-gradient btn-primary rounded-full"
+                        <div class="text-end">
+                            <button (click)="getIndex($index)"
+                                class="btn btn-gradient btn-primary rounded-full ---prevent-on-load-init"
                                 aria-haspopup="dialog" aria-expanded="false" aria-controls="extra-large-modal"
                                 data-overlay="#extra-large-modal">Details <span class="material-symbols-outlined">
                                     expand_content
                                 </span></button>
                         </div>
+                        <ul class="flex gap-2">
+                            <li class="font-bold text-xs">{{p.topTechs[0]}}</li>
+                            <li class="font-semibold text-xs">{{p.topTechs[1]}}</li>
+                            <li class="text-xs">{{p.topTechs[2]}}</li>
+                        </ul>
                     </div>
                 </div>
             </div>

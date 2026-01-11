@@ -43,7 +43,7 @@ export class RecentProjects {
     {
       title: "Gym Management System",
       image: "./images/projects/gymManagemntMCV.png",
-      type: "Full Stack",
+      type: "Fullstack",
       shortDesc: "A comprehensive MVC-based system to manage gym members, trainers, subscriptions, and facility equipment.",
       topTechs: ["ASP.NET Core MVC", "Entity Framework Core", "SQL Server"],
       liveDemo: "http://powerfitnessgymmanagement.runasp.net/",
