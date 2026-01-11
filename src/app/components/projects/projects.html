@@ -1,0 +1,58 @@
+<section class="my-10">
+    <div class="lg:w-3/4 mx-auto">
+        <h2 class="flex items-center gap-2 text-4xl font-bold">
+            <a href="#projects">
+                <div
+                    class="size-10 flex items-center justify-center bg-primary/20 rounded-full cursor-pointer hover:bg-primary/30 duration-200">
+                    <span class="material-symbols-outlined">
+                        arrow_left_alt
+                    </span>
+                </div>
+            </a>
+
+            <span>All Projects</span>
+        </h2>
+        <div class="flex flex-wrap my-5 ">
+            @for(p of projects; track $index){
+            <div class="md:w-1/2 p-3">
+                <div class="bg-gray-100 rounded-3xl shadow overflow-hidden intersect:motion-preset-expand">
+                    <div class="h-1/2 relative w-full group overflow-hidden">
+                        <img [src]="p.image" [alt]="p.title"
+                            class="aspect-7/3 object-cover w-full group-hover:scale-105 duration-300">
+                        <div
+                            class="w-full h-full bg-black/20 absolute top-0 opacity-0 group-hover:opacity-100 duration-500 cursor-pointer flex justify-center items-center">
+                            <a [href]="p.liveDemo"
+                                class="px-1 rounded-full bg-black/50 hover:bg-black/60 hover:scale-105 duration-300 text-gray-200 text-sm w-fit">click
+                                here to view live
+                                demo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-bold">{{p.title}}</h3>
+                            <span class="badge badge-primary rounded-full">{{p.type}}</span>
+                        </div>
+                        <p class="my-3">{{p.shortDesc}}
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <ul class="flex gap-2">
+                                <li class="font-bold">{{p.topTechs[0]}}</li>
+                                <li class="font-semibold">{{p.topTechs[1]}}</li>
+                                <li>{{p.topTechs[2]}}</li>
+                            </ul>
+                            <button (click)="getIndex($index)" class="btn btn-gradient btn-primary rounded-full"
+                                aria-haspopup="dialog" aria-expanded="false" aria-controls="extra-large-modal"
+                                data-overlay="#extra-large-modal">Details <span class="material-symbols-outlined">
+                                    expand_content
+                                </span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<app-project-details [project]="details"></app-project-details>

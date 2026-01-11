@@ -1,0 +1,69 @@
+<section class="my-10 py-5">
+    <h2 class="text-sm font-bold text-center text-primary">Education and Experience</h2>
+    <h2 class="text-4xl lg:text-5xl font-bold text-center">Professional Experience</h2>
+    <div class="md:w-3/4 mx-auto px-3 lg:px-10 flex flex-wrap my-5 ">
+        <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical timeline-centered">
+            <!-- timeline item 1-->
+            <li>
+                <div class="timeline-middle h-16">
+                    <span class="bg-primary/50 flex size-8 items-center justify-center rounded-full">
+                        <span
+                            class="icon-[streamline-freehand--website-development-monitor-www-web] text-primary size-5"></span>
+                    </span>
+                </div>
+                <div class="timeline-start me-4 mt-8 max-md:pt-2">
+                    <div class="text-base-content/50 text-sm font-normal">(SEP, 2024 - DEC, 2025)</div>
+                </div>
+                <div class="timeline-end ms-4 mb-8">
+                    <div class="card intersect:motion-preset-slide-left motion-delay-100">
+                        <div class="card-body gap-4">
+                            <h5 class="card-title text-lg">Full Stack Web Development Diploma</h5>
+                            <p>
+                                <span class="block font-bold">Route IT Training Center</span>
+                                Completed intensive hands-on training covering frontend development with Angular and
+                                backend development with ASP.NET Core and SQL Server, building real-world, end-to-end
+                                web applications using clean architecture principles.
+                            </p>
+                            <button (click)="setIndex(0)" class="btn btn-soft btn-primary w-fit" aria-haspopup="dialog"
+                                aria-expanded="false" aria-controls="scroll-inside-modal"
+                                data-overlay="#scroll-inside-modal">Certificate</button>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+            </li>
+            <!-- /timeline item 1-->
+            <!-- timeline item 2-->
+            <li class="timeline-shift">
+                <div class="timeline-middle h-16">
+                    <span class="bg-success/50 flex size-8 items-center justify-center rounded-full">
+                        <span class="icon-[fa7-solid--user-graduate] text-success size-5"></span>
+                    </span>
+                </div>
+                <div class="timeline-end mt-6 px-1 md:mt-8">
+                    <div class="text-base-content/50 text-sm font-normal">(SEP, 2021 - JUL, 2025)</div>
+                </div>
+                <div class="timeline-start me-4 mb-8">
+                    <div class="card intersect:motion-preset-slide-right motion-delay-200">
+                        <div class="card-body gap-4">
+                            <h5 class="card-title text-lg">Bachelor’s Degree in Business Information Systems</h5>
+                            <p>
+                                <span class="block font-bold">Modern Academy, Maadi</span>
+                                Graduated with a strong foundation in business analysis, information systems, and
+                                software fundamentals, enabling me to bridge business requirements with technical
+                                solutions.
+                            </p>
+                            <button (click)="setIndex(1)" class="btn btn-soft btn-primary w-fit" aria-haspopup="dialog"
+                                aria-expanded="false" aria-controls="scroll-inside-modal"
+                                data-overlay="#scroll-inside-modal">Certificate</button>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+            </li>
+            <!-- /timeline item 2-->
+        </ul>
+    </div>
+</section>
+
+<app-viewer-modal [src]="src"></app-viewer-modal>

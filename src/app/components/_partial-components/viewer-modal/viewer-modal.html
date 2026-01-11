@@ -1,0 +1,21 @@
+<div id="scroll-inside-modal" class="overlay modal overlay-open:opacity-100 overlay-open:duration-300 hidden"
+    role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-dialog-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Certificate</h3>
+                <button type="button" class="btn btn-text btn-circle btn-sm absolute end-3 top-3" aria-label="Close"
+                    data-overlay="#scroll-inside-modal">
+                    <span class="icon-[tabler--x] size-4"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img [src]="src" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-soft btn-secondary"
+                    data-overlay="#scroll-inside-modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
