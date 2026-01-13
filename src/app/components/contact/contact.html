@@ -4,60 +4,12 @@
     <div class="md:w-3/4 mx-auto px-3 lg:px-10 flex flex-wrap items-center my-10 ">
         <div class="lg:w-1/2 p-5 text-center">
             <div class="mb-3 intersect:motion-preset-slide-right motion-delay-100">
-                <img src="./favico.png" alt="Logo" class="w-1/3 mx-auto bg-black rounded-4xl p-0.5 shadow">
+                <img src="./favico.png" alt="Logo" class="w-1/3 mx-auto rounded-4xl p-0.5 shadow border-2">
             </div>
             <p class="intersect:motion-preset-slide-right motion-delay-200">I'm currently available for full-time
                 opportunities and open to freelance projects . If you have a project
                 that needs some creative touch, let's connect.</p>
-            <div class="flex flex-wrap justify-center gap-2 mt-5">
-                <div class="tooltip [--placement:bottom]">
-                    <a href="https://www.linkedin.com/in/gamal-ehab" target="_blank" class="tooltip-toggle"
-                        aria-label="Tooltip">
-                        <button
-                            class="btn btn-circle  [--btn-color:#0a66c2] text-white intersect:motion-preset-slide-left intersect:motion-ease-spring-bouncier intersect:motion-delay-50"
-                            aria-label="Linkedin Icon Button">
-                            <span class="icon-[tabler--brand-linkedin] size-4.5 shrink-0"></span>
-                        </button>
-                    </a>
-                    <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible mt-1.5" role="tooltip">
-                        <span class="tooltip-body">LinkedIn</span>
-                    </span>
-                </div>
-                <div class="tooltip [--placement:bottom]">
-                    <a href="https://github.com/GamaL-Ehab" target="_blank" class="tooltip-toggle" aria-label="Tooltip">
-                        <button
-                            class="btn btn-circle  [--btn-color:#2b3137] text-white intersect:motion-preset-slide-left intersect:motion-ease-spring-bouncier intersect:motion-delay-100"
-                            aria-label="Github Icon Button">
-                            <span class="icon-[tabler--brand-github] size-4.5 shrink-0"></span>
-                        </button></a>
-                    <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible mt-1.5" role="tooltip">
-                        <span class="tooltip-body">Github</span>
-                    </span>
-                </div>
-                <div class="tooltip [--placement:bottom]">
-                    <a href="https://wa.me/+201118416050" target="_blank" class="tooltip-toggle" aria-label="Tooltip">
-                        <button
-                            class="btn btn-circle  [--btn-color:#25D366] text-white intersect:motion-preset-slide-left intersect:motion-ease-spring-bouncier intersect:motion-delay-150"
-                            aria-label="Whatsapp Icon Button">
-                            <span class="icon-[tabler--brand-whatsapp] size-4.5 shrink-0"></span>
-                        </button></a>
-                    <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible mt-1.5" role="tooltip">
-                        <span class="tooltip-body">Whatsapp</span>
-                    </span>
-                </div>
-                <div class="tooltip [--placement:bottom]">
-                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJfsdFsVGLvLHvQGTSpBtRKSQdWDZFKjdtWMnqhFJxvTtQLvHrvhLpshBgGjZhxtZpmclSB"
-                        target="_blank" class="tooltip-toggle" aria-label="Tooltip">
-                        <button
-                            class="btn btn-circle  [--btn-color:#FBBC04] text-white intersect:motion-preset-slide-left intersect:motion-ease-spring-bouncier intersect:motion-delay-200"
-                            aria-label="Gmail Icon Button">
-                            <span class="icon-[simple-icons--gmail] size-4.5 shrink-0"></span>
-                        </button></a>
-                    <span class="tooltip-content tooltip-shown:opacity-100 tooltip-shown:visible mt-1.5" role="tooltip">
-                        <span class="tooltip-body">Gmail</span>
-                    </span>
-                </div>
-            </div>
+            <app-social-media></app-social-media>
         </div>
         <div class="lg:w-1/2 mx-auto">
             <form (submit)="sendEmail($event)"

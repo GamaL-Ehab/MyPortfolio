@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import { SocialMedia } from '../_partial-components/social-media/social-media';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [SocialMedia],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })
