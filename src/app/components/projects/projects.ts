@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IProject, IProjectDetail } from '../../core/interfaces/iproject';
+import { IProject, IProjectDetails } from '../../core/interfaces/iproject';
 import { ProjectDetails } from '../project-details/project-details';
 
 @Component({
@@ -10,422 +10,1078 @@ import { ProjectDetails } from '../project-details/project-details';
 })
 export class Projects {
 
-  details!: IProjectDetail;
+  details!: IProjectDetails;
   getIndex(index: number) {
     this.details = this.projects[index].details;
   }
 
   projects: IProject[] = [
     {
-      title: "E-Commerce RESTful API",
-      image: "./images/projects/ecommerceApi.jpg",
-      type: "Backend",
-      shortDesc: "A scalable backend built with .NET 8, implementing Clean Architecture, JWT authentication, and the Repository Pattern.",
-      topTechs: [".NET 8", "Entity Framework Core", "Redis"],
-      liveDemo: "",
-      date: "2024-11-10",
+      id: 1,
+      title: "E-Commerce API",
+      tagline: "Scalable backend API for modern e-commerce platforms",
+      thumbnail: "./images/projects/ecommerceApi.jpg",
+      technologies: [
+        "ASP.NET Core Web API",
+        "Entity Framework Core",
+        "Redis"
+      ],
+      category: "Backend",
+
       details: {
-        title: "Advanced E-Commerce Backend System",
-        image: "./images/projects/ecommerceApi.jpg",
-        type: "Enterprise REST API",
-        description: "A professional-grade API designed for high performance and maintainability. It utilizes Clean Architecture (Onion Architecture) to decouple business logic from external concerns. Key features include identity management with JWT, distributed caching with Redis, payment gateway integration, and automated mapping using AutoMapper.",
-        topTechs: [".NET 8", "SQL Server", "Redis"],
-        techStack: [
-          ".NET 8 Web API",
-          "Entity Framework Core",
-          "SQL Server",
-          "Redis (Caching)",
-          "Identity Framework (JWT)",
-          "AutoMapper",
-          "FluentValidation",
-          "Swagger/OpenAPI"
+        overview: {
+          description:
+            "A professional e-commerce backend API built with ASP.NET Core Web API following Onion Architecture and clean enterprise backend practices. The system exposes RESTful endpoints to handle products, categories, users, orders, and authentication. It emphasizes maintainability, high performance through caching, and separation of concerns using layered architecture patterns. Key backend principles such as Specification Pattern, Repository Pattern, dependency injection, and centralized error handling are applied to ensure scalable and testable backend logic. Additionally, Swagger API documentation is integrated to support easy exploration and usage of endpoints.",
+          title: "E-Commerce API",
+          thumbnail: "./images/projects/ecommerceApi.jpg",
+          duration: "2 months",
+          timeline: "2025",
+          status: "Live"
+        },
+
+        role: {
+          position: "Backend Developer",
+          responsibilities: [
+            "Architected and implemented RESTful API endpoints using ASP.NET Core",
+            "Applied Onion Architecture for clear separation of concerns",
+            "Used Specification and Repository design patterns to encapsulate query logic",
+            "Integrated Redis caching to improve performance on high-traffic endpoints",
+            "Configured JWT authentication and role-based authorization for secure access",
+            "Documented API endpoints using Swagger for developer usability",
+            "Designed database models and data access with Entity Framework Core"
+          ]
+        },
+
+        techStack: {
+          frontend: [],
+          backend: [
+            "ASP.NET Core Web API",
+            "Entity Framework Core",
+            "SQL Server",
+            "JWT Authentication",
+            "Specification Pattern",
+            "Repository Pattern"
+          ],
+          deployment: [
+            "Redis Caching",
+            "Swagger",
+            "MonsterASP"
+          ]
+        },
+
+        features: [
+          "RESTful API design for e-commerce operations",
+          "Onion Architecture for maintainability and modularity",
+          "JWT-based authentication and role-based access control",
+          "Product, category, and order management endpoints",
+          "Specification Pattern for flexible query logic",
+          "Entity Framework Core with migrations for database access",
+          "Redis caching for performance optimization",
+          "Swagger UI documentation for API testing and dev support"
         ],
-        liveDemo: "",
-        repository: "https://github.com/GamaL-Ehab/E-Commerce-API",
-        date: "2024-11-10"
+
+        challenges: [
+          {
+            problem: "Ensuring clean separation of concerns across backend layers",
+            solution:
+              "Adopted Onion Architecture, decoupling domain logic from infrastructure and presentation layers"
+          },
+          {
+            problem: "Improving performance for frequently requested data",
+            solution:
+              "Integrated Redis caching to reduce database load and serve cached responses where applicable"
+          }
+        ],
+
+        outcome:
+          "Delivered a secure, scalable, and maintainable backend API capable of powering enterprise e-commerce platforms",
+
+        links: {
+          live: "http://storebygamal.runasp.net/swagger/index.html",
+          github: "https://github.com/GamaL-Ehab/E-Commerce-API"
+        }
       }
-    },
+    }
+    ,
+
     {
+      id: 2,
       title: "Gym Management System",
-      image: "./images/projects/gymManagemntMCV.png",
-      type: "Fullstack",
-      shortDesc: "A comprehensive MVC-based system to manage gym members, trainers, subscriptions, and facility equipment.",
-      topTechs: ["ASP.NET Core MVC", "Entity Framework Core", "SQL Server"],
-      liveDemo: "http://powerfitnessgymmanagement.runasp.net/",
-      date: "2024-05-15",
+      tagline: "Comprehensive web application for managing gym operations with role-based access",
+      thumbnail: "./images/projects/gymManagementMVC.png",
+      technologies: [
+        "ASP.NET MVC",
+        "Entity Framework Core",
+        "ASP.NET Identity"
+      ],
+      category: "Fullstack",
+
       details: {
-        title: "Gym Management MVC System",
-        image: "./images/projects/gymManagemntMCV.png",
-        type: "Full-Stack CRUD Application",
-        description: "A management platform built using the Model-View-Controller architecture. It streamlines gym administrative tasks such as tracking member registrations, managing subscription plans, assigning trainers, and maintaining an inventory of gym equipment. It features a secure backend with a relational database for data persistence.",
-        topTechs: ["C#", "ASP.NET Core", "SQL Server"],
-        techStack: [
-          "ASP.NET Core MVC",
-          "Entity Framework Core",
-          "SQL Server",
-          "LINQ",
-          "Bootstrap",
-          "HTML5/CSS3",
-          "JavaScript"
+        overview: {
+          description:
+            "A scalable Gym Management System built using ASP.NET MVC with a clean 3-Layer Architecture (Presentation, Business Logic, Data Access). The application helps gym administrators manage members, trainers, plans, sessions, and memberships, while enforcing secure authentication and role-based authorization. It leverages ASP.NET Identity for user management and applies the Repository and Unit of Work patterns along with Dependency Injection to enforce separation of concerns and maintainable backend logic. Razor Views and Bootstrap 5 provide responsive UI interfaces.",
+          title: "Gym Management System (ASP.NET MVC)",
+          thumbnail: "./images/projects/gymManagementMVC.png",
+          duration: "3 months",
+          timeline: "2025",
+          status: "Live"
+        },
+
+        role: {
+          position: "Fullstack Developer",
+          responsibilities: [
+            "Designed and implemented the 3-layer MVC architecture",
+            "Built and integrated business logic and data access layers",
+            "Implemented secure authentication and role-based access using ASP.NET Identity",
+            "Created Razor Views and responsive UI using Bootstrap 5",
+            "Configured Dependency Injection for services and repository layers",
+            "Managed database schema with Entity Framework Core migrations"
+          ]
+        },
+
+        techStack: {
+          frontend: [
+            "ASP.NET MVC",
+            "Razor Views",
+            "Bootstrap 5"
+          ],
+          backend: [
+            "C#",
+            "Entity Framework Core",
+            "ASP.NET Identity",
+            "Repository Pattern",
+            "Unit of Work"
+          ],
+          deployment: [
+            "MonsterASP",
+            "SQL Server"
+          ]
+        },
+
+        features: [
+          "User authentication and role-based access control",
+          "Member registration and health profile management",
+          "Trainer profiles and session scheduling",
+          "Membership plan CRUD with activation toggling",
+          "Attachment service for member photos",
+          "Layered architecture with business logic separation"
         ],
-        liveDemo: "http://powerfitnessgymmanagement.runasp.net/",
-        repository: "https://github.com/GamaL-Ehab/GymManagementMVC",
-        date: "2024-05-15"
+
+        challenges: [
+          {
+            problem: "Maintaining clean separation of concerns between UI, logic, and data",
+            solution:
+              "Applied 3-Layer Architecture along with Repository and Unit of Work patterns to reduce coupling and improve maintainability"
+          },
+          {
+            problem: "Securing sensitive gym admin features",
+            solution:
+              "Implemented ASP.NET Identity with role-based authorization to control access across different user types"
+          }
+        ],
+
+        outcome:
+          "Delivered a modular gym management web app with responsive UI and maintainable backend architecture that supports full administrative capabilities",
+
+        links: {
+          live: "http://powerfitnessgymmanagement.runasp.net",
+          github: "https://github.com/GamaL-Ehab/GymManagementMVC"
+        }
       }
     },
 
     {
-      title: "E-Commerce Angular Client",
-      image: "./images/projects/Ecommerce.png",
-      type: "Frontend",
-      shortDesc: "A modern, responsive client-side application built with Angular to interface with the E-Commerce REST API.",
-      topTechs: ["Angular", "TypeScript", "Bootstrap"],
-      liveDemo: "",
-      date: "2024-11-25",
+      id: 3,
+      title: "Ecommerce Frontend",
+      tagline: "Responsive Angular ecommerce frontend application",
+      thumbnail: "./images/projects/Ecommerce.png",
+      technologies: [
+        "Angular",
+        "TypeScript",
+        "SCSS"
+      ],
+      category: "Frontend",
+
       details: {
-        title: "E-Commerce Frontend UI",
-        image: "./images/projects/Ecommerce.png",
-        type: "Single Page Application (SPA)",
-        description: "The frontend layer of the e-commerce ecosystem, developed using Angular and TypeScript. It features a component-based architecture to handle product catalogs, user authentication (login/register), shopping cart state management, and checkout workflows. It uses RxJS for reactive state handling and consumes the backend API endpoints securely.",
-        topTechs: ["Angular 17", "TypeScript", "RxJS"],
-        techStack: [
-          "Angular 17",
-          "TypeScript",
-          "HTML5/SCSS",
-          "Bootstrap 5",
-          "RxJS (Observables)",
-          "Angular Routing",
-          "FontAwesome",
-          "ngx-toastr"
+        overview: {
+          description:
+            "A modern ecommerce frontend application built with Angular (generated with Angular CLI). It provides a responsive and modular UI for browsing products, managing cart functionality, and navigating between pages using Angular routing. The application emphasizes component-based architecture, scalable folder structure with modules, and a clear separation of concerns for UI, business logic, and routing. Although this project focuses on frontend experience and visuals, it is designed to easily integrate with backend APIs for products, authentication, and order services. Key tools include Angular Router for navigation, Angular Forms for interactions, and SCSS for styling and layout.",
+          title: "Ecommerce Frontend",
+          thumbnail: "./images/projects/Ecommerce.png",
+          duration: "1–2 months",
+          timeline: "2025",
+          status: "Live"
+        },
+
+        role: {
+          position: "Frontend Developer",
+          responsibilities: [
+            "Built a modular Angular application using Angular CLI and TypeScript",
+            "Structured components, modules, and routing for clear navigation and scalability",
+            "Implemented responsive layouts using SCSS and Angular best practices",
+            "Configured environment settings and builds for production deployment",
+            "Prepared the app for future backend integration with API services"
+          ]
+        },
+
+        techStack: {
+          frontend: [
+            "Angular",
+            "TypeScript",
+            "SCSS"
+          ],
+          backend: [],
+          deployment: [
+            "Vercel"
+          ]
+        },
+
+        features: [
+          "Angular routing for page navigation",
+          "Responsive design for multiple device sizes",
+          "Modular UI components",
+          "Client-side state handling via Angular services",
+          "Clean folder structure to support future backend integration"
         ],
-        liveDemo: "",
-        repository: "https://github.com/GamaL-Ehab/Ecommerce",
-        date: "2024-11-25"
+
+        challenges: [
+          {
+            problem: "Organizing Angular modules and components for scalability",
+            solution:
+              "Used feature modules and clear folder structure to separate features and shared utilities"
+          },
+          {
+            problem: "Ensuring good responsive UX across devices",
+            solution:
+              "Styled components using SCSS with responsive breakpoints and layout utilities"
+          }
+        ],
+
+        outcome:
+          "Delivered a clean and reusable Angular ecommerce frontend ready to integrate backend services",
+
+        links: {
+          live: "https://ecommerce-kohl-rho-42.vercel.app",
+          github: "https://github.com/GamaL-Ehab/Ecommerce"
+        }
       }
     },
     {
-      title: "Angular Todo Application",
-      image: "./images/projects/TodoApp.png",
-      type: "Frontend",
-      shortDesc: "A classic task management tool built with Angular, utilizing services and local storage for data persistence.",
-      topTechs: ["Angular", "TypeScript", "RxJS"],
-      liveDemo: "",
-      date: "2024-06-12",
+      id: 4,
+      title: "TodoApp (Angular)",
+      tagline: "Modular Todo application with task management and responsive UI",
+      thumbnail: "./images/projects/TodoApp.png",
+      technologies: [
+        "Angular",
+        "TypeScript",
+        "SCSS"
+      ],
+      category: "Frontend",
+
       details: {
-        title: "Task Manager with Angular",
-        image: "./images/projects/TodoApp.png",
-        type: "Single Page Application (SPA)",
-        description: "A structured Angular application demonstrating core framework concepts including components, services, and dependency injection. It features full CRUD capabilities for tasks, uses Angular's reactive forms (or template-driven forms) for input handling, and persists user data via LocalStorage to maintain state across page reloads.",
-        topTechs: ["Angular", "TypeScript", "SCSS"],
-        techStack: [
-          "Angular",
-          "TypeScript",
-          "RxJS",
-          "HTML5",
-          "SCSS/CSS",
-          "LocalStorage API"
+        overview: {
+          description:
+            "A task management Todo application built with Angular 20 using Angular CLI and modern frontend patterns. The app allows users to add, view, edit, and delete tasks. It employs modular components, Angular routing, and state handling through Angular services to maintain a clean and scalable structure. SCSS is used for styling with responsiveness in mind, giving users a coherent experience across devices. The app also includes environment handling and build setup optimized for a production deployment.",
+          title: "TodoApp (Angular)",
+          thumbnail: "./images/projects/TodoApp.png",
+          duration: "1 month",
+          timeline: "2025",
+          status: "Live"
+        },
+
+        role: {
+          position: "Frontend Developer",
+          responsibilities: [
+            "Developed core Angular components for task listing and task actions",
+            "Configured Angular routing for navigation between views",
+            "Handled UI state and task data using Angular services",
+            "Styled UI using SCSS with a focus on responsive layout",
+            "Prepared builds and environment configurations for streamlined deployment"
+          ]
+        },
+
+        techStack: {
+          frontend: [
+            "Angular",
+            "TypeScript",
+            "SCSS"
+          ],
+          backend: [],
+          deployment: [
+            "Vercel"
+          ]
+        },
+
+        features: [
+          "Add, edit, and delete todo tasks",
+          "Responsive UI across mobile and desktop",
+          "Modular Angular components and services",
+          "Angular routing for clear navigation flow",
+          "Optimized production build configuration"
         ],
-        liveDemo: "",
-        repository: "https://github.com/GamaL-Ehab/TodoApp",
-        date: "2024-06-12"
+
+        challenges: [
+          {
+            problem: "Organizing Angular modules for clear separation of concerns",
+            solution:
+              "Used Angular feature modules and services to separate UI logic from core services"
+          },
+          {
+            problem: "Ensuring consistent responsive UI across different screen sizes",
+            solution:
+              "Implemented SCSS with breakpoints and layout utilities for adaptability"
+          }
+        ],
+
+        outcome:
+          "Delivered a clean, maintainable, and responsive Angular Todo application ready for real-world usage",
+
+        links: {
+          live: "https://todo-app-three-lemon-77.vercel.app",
+          github: "https://github.com/GamaL-Ehab/TodoApp"
+        }
       }
     },
     {
-      title: "Devfolio Portfolio Template",
-      image: "./images/projects/Devfolio.png",
-      type: "Frontend",
-      shortDesc: "A sleek, responsive one-page portfolio template built with Bootstrap 5 for developers and designers.",
-      topTechs: ["HTML5", "CSS3", "Bootstrap 5"],
-      liveDemo: "",
-      date: "2024-02-10",
+      id: 5,
+      title: "Devfolio Portfolio Website",
+      tagline: "Static developer portfolio template to showcase skills and projects",
+      thumbnail: "./images/projects/Devfolio.png",
+      technologies: [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      category: "Frontend",
+
       details: {
-        title: "Devfolio - Personal Portfolio Template",
-        image: "./images/projects/Devfolio.png",
-        type: "Static Web Template",
-        description: "Devfolio is a modern, professional portfolio template designed to showcase personal work and technical skills. It features a clean UI with smooth scrolling, a filterable portfolio gallery, and a fully responsive layout. The project focuses on clean HTML5 structure and utilizes Bootstrap's utility classes for rapid, mobile-first development.",
-        topTechs: ["Bootstrap 5", "JavaScript", "CSS3"],
-        techStack: [
-          "HTML5",
-          "CSS3",
-          "Bootstrap 5",
-          "JavaScript",
-          "Font Awesome",
-          "Google Fonts"
+        overview: {
+          description:
+            "A static portfolio website built using semantic HTML5, modern CSS3, and JavaScript to create a personal developer showcase. This template includes sections such as Home, About, Skills, Projects, and Contact, allowing developers to present their professional story and work. The responsive layout adapts to different screen sizes and can be customized easily by updating the HTML content and asset paths. The structure emphasizes clean markup, organized styling, and modular JavaScript behavior for interaction elements.",
+          title: "Devfolio Portfolio Website",
+          thumbnail: "./images/projects/Devfolio.png",
+          duration: "1–2 weeks",
+          timeline: "2025",
+          status: "Live"
+        },
+
+        role: {
+          position: "Frontend Developer",
+          responsibilities: [
+            "Constructed the portfolio structure using semantic HTML for accessibility",
+            "Styled components and layout using scalable and responsive CSS3",
+            "Added interactive behaviors using vanilla JavaScript",
+            "Optimized images and layout for different devices",
+            "Configured sections like Projects, About, and Contact for easy reuse"
+          ]
+        },
+
+        techStack: {
+          frontend: [
+            "HTML5",
+            "CSS3",
+            "JavaScript"
+          ],
+          backend: [],
+          deployment: [
+            "Static Hosting (e.g., GitHub Pages)"
+          ]
+        },
+
+        features: [
+          "Responsive multi-section layout (Home, About, Projects, Contact)",
+          "Clean and semantic HTML structure",
+          "CSS-driven styling with potential for SCSS extension",
+          "Vanilla JavaScript for navbar and interactive UI elements",
+          "Portfolio project links and social media integration"
         ],
-        liveDemo: "",
-        repository: "https://github.com/GamaL-Ehab/Devfolio",
-        date: "2024-02-10"
+
+        challenges: [
+          {
+            problem: "Ensuring a polished responsive layout across devices",
+            solution:
+              "Applied mobile-first CSS and media queries to adjust layout on different resolutions"
+          },
+          {
+            problem: "Keeping the site lightweight while still visually appealing",
+            solution:
+              "Used optimized images and minimal JavaScript to reduce load times"
+          }
+        ],
+
+        outcome:
+          "Delivered a clean, customizable static portfolio template showcasing professional skills and projects",
+
+        links: {
+          live: "https://YOUR_USERNAME.github.io/Devfolio",
+          github: "https://github.com/GamaL-Ehab/Devfolio"
+        }
       }
     },
     {
-      title: "Recipes Discovery App",
-      image: "./images/projects/Recipes.png",
-      type: "Frontend",
-      shortDesc: "A dynamic recipe search application built with Angular, providing detailed cooking instructions and ingredient lists.",
-      topTechs: ["Angular", "TypeScript", "RxJS"],
-      liveDemo: "",
-      date: "2024-03-05",
+      id: 6,
+      title: "Recipes App",
+      tagline: "Modular Angular application for browsing and managing recipes",
+      thumbnail: "./images/projects/Recipes.png",
+      technologies: [
+        "Angular",
+        "TypeScript",
+        "SCSS"
+      ],
+      category: "Frontend",
+
       details: {
-        title: "Global Recipes Explorer",
-        image: "./images/projects/Recipes.png",
-        type: "Single Page Application (SPA)",
-        description: "An Angular-based platform that allows users to explore a wide variety of cuisines. The app integrates with a RESTful Recipes API to fetch real-time data about meal categories and specific dish details. It utilizes Angular's modular architecture, data binding, and structural directives to create a seamless, interactive user experience.",
-        topTechs: ["Angular", "RxJS", "Bootstrap"],
-        techStack: [
-          "Angular",
-          "TypeScript",
-          "RxJS (Observables)",
-          "HttpClient Module",
-          "Angular Router",
-          "Bootstrap 5",
-          "CSS3"
+        overview: {
+          description:
+            "A dynamic Recipes web application built using Angular (generated with Angular CLI). The app provides users with interfaces to browse, view, and potentially manage recipe entries using a modular Angular component architecture. It utilizes Angular Router for client-side navigation and services for state management, while SCSS is used to implement responsive and modern styling. Designed with scalability in mind, it supports clear separation of UI, logic, and future API service integration. The application is set up with a production-ready build configuration, facilitating deployment to static hosting platforms.",
+          title: "Recipes App",
+          thumbnail: "./images/projects/Recipes.png",
+          duration: "1–2 months",
+          timeline: "2025",
+          status: "Live"
+        },
+
+        role: {
+          position: "Frontend Developer",
+          responsibilities: [
+            "Set up the Angular application using Angular CLI and TypeScript",
+            "Structured components and modules for a clear application layout",
+            "Implemented routing for navigation between recipe views",
+            "Styled UI using SCSS for a responsive experience",
+            "Configured Angular build settings for optimized production output"
+          ]
+        },
+
+        techStack: {
+          frontend: [
+            "Angular",
+            "TypeScript",
+            "SCSS"
+          ],
+          backend: [],
+          deployment: [
+            "Vercel"
+          ]
+        },
+
+        features: [
+          "Client-side navigation with Angular Router",
+          "Modular UI components for recipes and shared views",
+          "Responsive layout for desktops and mobile devices",
+          "Angular services for potential state and data management",
+          "Optimized build setup for production deployment"
         ],
-        liveDemo: "",
-        repository: "https://github.com/GamaL-Ehab/Recipes",
-        date: "2024-03-05"
+
+        challenges: [
+          {
+            problem: "Organizing Angular components and routes for maintainability",
+            solution:
+              "Used modular components and feature modules to separate concerns and streamline navigation"
+          },
+          {
+            problem: "Ensuring responsive and consistent UI styling",
+            solution:
+              "Applied SCSS with utility classes and media queries for adaptive layouts"
+          }
+        ],
+
+        outcome:
+          "Delivered a scalable and responsive Angular recipes application suitable for further enhancement and backend integration",
+
+        links: {
+          live: "https://recipes-woad.vercel.app",
+          github: "https://github.com/GamaL-Ehab/Recipes"
+        }
       }
     },
     {
-      title: "Mealify Landing Page",
-      image: "./images/projects/Mealify.png",
-      type: "Frontend",
-      shortDesc: "A modern, responsive restaurant landing page designed with advanced CSS techniques and smooth animations.",
-      topTechs: ["HTML5", "CSS3", "Animate.css"],
-      liveDemo: "",
-      date: "2024-01-20",
+      id: 7,
+      title: "Mealify",
+      tagline: "Responsive static web interface for food & meal presentation",
+      thumbnail: "./images/projects/Mealify.png",
+      technologies: [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      category: "Frontend",
+
       details: {
-        title: "Mealify - Food & Restaurant UI",
-        image: "./images/projects/Mealify.png",
-        type: "Static Web Interface",
-        description: "Mealify is a high-fidelity landing page project that showcases professional CSS layout skills. It features a fully responsive design, a sticky navigation menu, hover effects, and a dark mode implementation using CSS variables. The layout is optimized for all screen sizes using a mobile-first approach and pure CSS styling without heavy frameworks.",
-        topTechs: ["CSS3", "HTML5", "Responsive Design"],
-        techStack: [
-          "HTML5",
-          "CSS3 (Flexbox & Grid)",
-          "CSS Variables",
-          "Animate.css",
-          "Google Fonts",
-          "Font Awesome"
+        overview: {
+          description:
+            "Mealify is a responsive static web interface designed using semantic HTML5, organized CSS3 layout, and minimal JavaScript for interaction. The project focuses on creating an elegant and engaging landing-style page that showcases food items, meals, or culinary concepts. With mobile-first responsiveness and visually appealing design patterns like flexbox and media queries, Mealify adapts seamlessly across devices. This static interface serves as a marketing or portfolio piece to present meals in a way that’s easy to navigate and visually consistent, while emphasizing modular structure and clean markup.",
+          title: "Mealify",
+          thumbnail: "./images/projects/Mealify.png",
+          duration: "1–2 weeks",
+          timeline: "2025",
+          status: "Live"
+        },
+
+        role: {
+          position: "Frontend Developer",
+          responsibilities: [
+            "Crafted responsive UI layout using semantic HTML5 structure",
+            "Styled the interface with modern CSS3 and responsive design techniques",
+            "Added lightweight JavaScript for UI interaction enhancements",
+            "Ensured cross-device responsiveness using media queries",
+            "Organized assets and typography for visual consistency"
+          ]
+        },
+
+        techStack: {
+          frontend: [
+            "HTML5",
+            "CSS3",
+            "JavaScript"
+          ],
+          backend: [],
+          deployment: [
+            "Static Hosting (e.g., GitHub Pages)"
+          ]
+        },
+
+        features: [
+          "Responsive layout across desktop and mobile",
+          "Clean semantic markup for accessibility",
+          "Visual design sections for meals and food items",
+          "CSS animations and hover interactions",
+          "Mobile-first breakpoints and fluid grids"
         ],
-        liveDemo: "",
-        repository: "https://github.com/GamaL-Ehab/Mealify",
-        date: "2024-01-20"
+
+        challenges: [
+          {
+            problem: "Ensuring consistent responsiveness across breakpoints",
+            solution:
+              "Used media queries and flexible layout techniques to handle layout shifts and adjustments"
+          },
+          {
+            problem: "Maintaining visual appeal with minimal JavaScript",
+            solution:
+              "Leveraged pure CSS transitions and interactive styles to keep performance high"
+          }
+        ],
+
+        outcome:
+          "Delivered a clean, visually appealing, and fully responsive static frontend interface suitable for presenting meals and culinary content",
+
+        links: {
+          live: "https://GamaL-Ehab.github.io/Mealify",
+          github: "https://github.com/GamaL-Ehab/Mealify"
+        }
       }
     },
     {
-      title: "Bookmarker System",
-      image: "./images/projects/Bookmarker.png",
-      type: "Frontend",
-      shortDesc: "A JavaScript-driven tool for saving and managing website bookmarks with URL validation and local persistence.",
-      topTechs: ["JavaScript", "Bootstrap 5", "HTML5"],
-      liveDemo: "",
-      date: "2023-12-05",
+      id: 8,
+      title: "Bookmarker",
+      tagline: "A clean and efficient CRUD application for managing web bookmarks",
+      thumbnail: "./images/projects/Bookmarker.png",
+      technologies: [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap 5",
+        "RegEx"
+      ],
+      category: "Frontend",
+
       details: {
-        title: "Bookmark Manager with Validation",
-        image: "./images/projects/Bookmarker.png",
-        type: "Vanilla JS CRUD App",
-        description: "A practical web application that allows users to store their favorite website links. The app includes a custom validation system using Regular Expressions (Regex) to ensure only valid URLs are submitted. It manages state by dynamically updating the DOM and synchronizing data with the browser's LocalStorage to prevent data loss on refresh.",
-        topTechs: ["Vanilla JavaScript", "Regex", "LocalStorage"],
-        techStack: [
-          "HTML5",
-          "CSS3",
-          "Bootstrap 5",
-          "Vanilla JavaScript (ES6)",
-          "Regular Expressions",
-          "LocalStorage API"
+        overview: {
+          description: "A lightweight frontend application designed to help users organize their favorite websites. Built using vanilla JavaScript and Bootstrap, it offers a seamless interface for adding, deleting, and visiting bookmarks. The application utilizes the browser's Local Storage to ensure data persistence, allowing users to retain their bookmarks even after refreshing the page.",
+          title: "Bookmarker",
+          thumbnail: "./images/projects/Bookmarker.png",
+          duration: "1 week",
+          timeline: "2024",
+          status: "Completed"
+        },
+
+        role: {
+          position: "Frontend Developer",
+          responsibilities: [
+            "Developed the user interface using HTML5 and Bootstrap 5",
+            "Implemented CRUD operations using vanilla JavaScript",
+            "Created regular expressions (RegEx) for strict URL and name validation",
+            "Integrated Local Storage for data persistence"
+          ]
+        },
+
+        techStack: {
+          frontend: [
+            "HTML5",
+            "CSS3",
+            "Bootstrap 5",
+            "JavaScript (ES6+)"
+          ],
+          backend: [],
+          deployment: [
+            "GitHub Pages"
+          ]
+        },
+
+        features: [
+          "Real-time input validation using Regular Expressions",
+          "Add, Delete, and Visit website bookmarks",
+          "Persistent data storage using Local Storage",
+          "Responsive design for mobile and desktop",
+          "Interactive sweet alerts for error handling"
         ],
-        liveDemo: "",
-        repository: "https://github.com/GamaL-Ehab/Assignment9-Bookmarker",
-        date: "2023-12-05"
+
+        challenges: [
+          {
+            problem: "Ensuring users enter valid URL formats",
+            solution: "Implemented a custom RegEx pattern to validate inputs before submission and provided visual feedback via CSS classes"
+          },
+          {
+            problem: "Data loss upon page refresh",
+            solution: "Utilized the browser's Local Storage API to save and retrieve the bookmark array dynamically"
+          }
+        ],
+
+        outcome: "A fully functional and responsive bookmark manager that demonstrates core DOM manipulation and data storage concepts.",
+
+        links: {
+          live: "https://gamal-ehab.github.io/Assignment9-Bookmarker/",
+          github: "https://github.com/GamaL-Ehab/Assignment9-Bookmarker"
+        }
       }
     },
     {
-      title: "Smart Login System",
-      image: "./images/projects/LoginSystem.png",
-      type: "Frontend",
-      shortDesc: "A secure authentication interface featuring registration, login validation, and session simulation using LocalStorage.",
-      topTechs: ["JavaScript", "Bootstrap 5", "HTML5"],
-      liveDemo: "",
-      date: "2023-12-15",
+      id: 9,
+      title: "Authentication System",
+      tagline: "A secure-simulated user authentication and registration flow",
+      thumbnail: "./images/projects/LoginSystem.png",
+      technologies: [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap 5",
+        "RegEx"
+      ],
+      category: "Frontend",
+
       details: {
-        title: "User Authentication & Registration System",
-        image: "./images/projects/LoginSystem.png",
-        type: "Vanilla JS Security UI",
-        description: "A functional login system that manages user accounts client-side. The application handles complex logic for verifying existing users, validating email formats via Regular Expressions, and managing 'Session' states by passing data between different HTML pages. It includes clear user feedback for incorrect credentials or empty inputs.",
-        topTechs: ["Vanilla JavaScript", "Regex", "Session Management"],
-        techStack: [
-          "HTML5",
-          "CSS3",
-          "Bootstrap 5",
-          "Vanilla JavaScript (ES6+)",
-          "Regular Expressions (Regex)",
-          "LocalStorage API"
+        overview: {
+          description: "A comprehensive frontend authentication interface that simulates a real-world login and registration flow. The system manages user sign-ups, validates credentials against stored data, and provides a protected 'Welcome' dashboard. It utilizes sophisticated validation logic and Local Storage to manage a mock user database entirely on the client side.",
+          title: "Authentication System",
+          thumbnail: "./images/projects/LoginSystem.png",
+          duration: "1 week",
+          timeline: "2024",
+          status: "Completed"
+        },
+
+        role: {
+          position: "Frontend Developer",
+          responsibilities: [
+            "Architected the login and signup logic using vanilla JavaScript",
+            "Developed custom validation functions for email and password security",
+            "Implemented session-like behavior to protect the home page from unauthorized access",
+            "Managed complex state for user registration and duplicate account checking"
+          ]
+        },
+
+        techStack: {
+          frontend: [
+            "HTML5",
+            "CSS3",
+            "Bootstrap 5",
+            "JavaScript (ES6+)"
+          ],
+          backend: [],
+          deployment: [
+            "GitHub Pages"
+          ]
+        },
+
+        features: [
+          "User Registration with duplicate email detection",
+          "Login system with credential verification",
+          "Protected Home/Dashboard route via session checks",
+          "Real-time form validation using Regular Expressions",
+          "Auto-login functionality using persistent Local Storage",
+          "Responsive design with modern UI feedback"
         ],
-        liveDemo: "",
-        repository: "https://github.com/GamaL-Ehab/Assignment10-Login-System",
-        date: "2023-12-15"
+
+        challenges: [
+          {
+            problem: "Preventing unauthorized users from accessing the Welcome page via URL",
+            solution: "Implemented a check on page load that redirects users back to the login screen if no 'active session' is found in Local Storage"
+          },
+          {
+            problem: "Ensuring email uniqueness without a traditional backend database",
+            solution: "Developed a logic flow that parses the stored user array and compares new sign-up data against existing records before allowing registration"
+          }
+        ],
+
+        outcome: "A robust and secure-feeling authentication simulation that demonstrates advanced logic handling and client-side data management.",
+
+        links: {
+          live: "https://gamal-ehab.github.io/Assignment10-Login-System/",
+          github: "https://github.com/GamaL-Ehab/Assignment10-Login-System"
+        }
       }
     },
     {
-      title: "Weather Forecast Dashboard",
-      image: "./images/projects/Weather.png",
-      type: "Frontend",
-      shortDesc: "A real-time weather application that fetches and displays a 3-day forecast using asynchronous JavaScript and a Weather API.",
-      topTechs: ["JavaScript", "Weather API", "Bootstrap 5"],
-      liveDemo: "",
-      date: "2024-01-05",
+      id: 10,
+      title: "Weather Dashboard",
+      tagline: "Dynamic real-time weather forecasting using asynchronous API integration",
+      thumbnail: "./images/projects/Weather.png",
+      technologies: [
+        "HTML5",
+        "JavaScript",
+        "Weather API"
+      ],
+      category: "Frontend",
+
       details: {
-        title: "Dynamic Weather Dashboard",
-        image: "./images/projects/Weather.png",
-        type: "API Integration Project",
-        description: "A responsive weather dashboard that utilizes the Fetch API to retrieve live data. The application features a search functionality that updates the UI dynamically without page reloads. It displays current conditions, max/min temperatures, and weather icons for a three-day period, utilizing date-time manipulation to show the correct day names.",
-        topTechs: ["Vanilla JavaScript", "Fetch API", "JSON Data Handling"],
-        techStack: [
-          "HTML5",
-          "CSS3",
-          "Bootstrap 5",
-          "Vanilla JavaScript (ES6+)",
-          "Fetch API (Async/Await)",
-          "External Weather API"
+        overview: {
+          description: "A sophisticated weather application that provides real-time atmospheric data and a three-day forecast for any location worldwide. The app leverages the WeatherAPI to fetch live data asynchronously, delivering a seamless user experience. It features a 'search-as-you-type' functionality and adapts its display based on the specific weather conditions and geographic location of the user.",
+          title: "Weather Dashboard",
+          thumbnail: "./images/projects/Weather.png",
+          duration: "1.5 weeks",
+          timeline: "2024",
+          status: "Completed"
+        },
+
+        role: {
+          position: "Frontend Developer",
+          responsibilities: [
+            "Integrated the WeatherAPI using Fetch API and asynchronous JavaScript (Async/Await)",
+            "Implemented dynamic search functionality that updates the UI in real-time as the user types",
+            "Developed a responsive 3-day forecast layout using Bootstrap's grid system",
+            "Managed data parsing for complex JSON responses to display temperature, wind speed, and weather icons"
+          ]
+        },
+
+        techStack: {
+          frontend: [
+            "HTML5",
+            "CSS3",
+            "Bootstrap 5",
+            "JavaScript (ES6+)",
+            "AJAX/Fetch API"
+          ],
+          backend: [], // Purely client-side API consumption
+          deployment: [
+            "GitHub Pages"
+          ]
+        },
+
+        features: [
+          "Real-time weather data fetching for thousands of cities",
+          "3-Day extended weather forecast",
+          "Dynamic search functionality with immediate feedback",
+          "Current location auto-detection (via Geolocation API)",
+          "Detailed metrics including wind speed, direction, and humidity",
+          "Custom-styled UI elements that adapt to day/night cycles"
         ],
-        liveDemo: "",
-        repository: "https://github.com/GamaL-Ehab/Assignment11-Weather",
-        date: "2024-01-05"
+
+        challenges: [
+          {
+            problem: "Handling the latency of API calls without freezing the user interface",
+            solution: "Utilized Async/Await patterns and loading states to ensure the UI remains responsive while data is being fetched from the server."
+          },
+          {
+            problem: "Managing API errors when a user enters a non-existent city name",
+            solution: "Implemented robust error handling and input validation that prevents the application from crashing and provides user-friendly error messages."
+          }
+        ],
+
+        outcome: "A high-performance, responsive weather application that demonstrates proficiency in working with third-party APIs and managing asynchronous data flows.",
+
+        links: {
+          live: "https://gamal-ehab.github.io/Assignment11-Weather/",
+          github: "https://github.com/GamaL-Ehab/Assignment11-Weather"
+        }
       }
     },
     {
+      id: 11,
       title: "Random Quote Generator",
-      image: "./images/projects/Quotes.png",
-      type: "Frontend",
-      shortDesc: "An interactive web tool that displays inspirational quotes using random selection logic and dynamic DOM updates.",
-      topTechs: ["JavaScript", "Bootstrap 5", "HTML5"],
-      liveDemo: "",
-      date: "2023-11-28",
+      tagline: "A clean and interactive interface for daily inspiration",
+      thumbnail: "./images/projects/Quotes.png",
+      technologies: [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      category: "Frontend",
+
       details: {
-        title: "Inspirational Quote Engine",
-        image: "./images/projects/Quotes.png",
-        type: "Vanilla JS UI Component",
-        description: "A lightweight application designed to demonstrate efficient array handling and event-driven programming in JavaScript. The app maintains a curated list of authors and their quotes, using math functions to ensure a unique selection upon every button click. It features a responsive layout that adapts to different screen sizes while maintaining a minimalist aesthetic.",
-        topTechs: ["Vanilla JavaScript", "Array Manipulation", "DOM Interaction"],
-        techStack: [
-          "HTML5",
-          "CSS3",
-          "Bootstrap 5",
-          "Vanilla JavaScript (ES6)",
-          "Event Listeners",
-          "Math Object"
+        overview: {
+          description: "A lightweight web application designed to deliver randomized inspirational quotes to users. The project focuses on clean UI/UX principles and efficient DOM manipulation using Vanilla JavaScript. It serves as a practical implementation of array randomization logic and responsive design using the Bootstrap framework.",
+          title: "Random Quote Generator",
+          thumbnail: "./images/projects/Quotes.png",
+          duration: "3 days",
+          timeline: "2024",
+          status: "Completed"
+        },
+
+        role: {
+          position: "Frontend Developer",
+          responsibilities: [
+            "Developed randomization logic in JavaScript to fetch unique quotes from a local data set",
+            "Ensured cross-browser compatibility and mobile responsiveness",
+            "Managed UI state updates to refresh the display without page reloads"
+          ]
+        },
+
+        techStack: {
+          frontend: [
+            "HTML5",
+            "CSS3",
+            "JavaScript (ES6+)"
+          ],
+          backend: [],
+          deployment: [
+            "GitHub Pages"
+          ]
+        },
+
+        features: [
+          "Randomized quote selection via Math logic",
+          "Dynamic UI updates using JavaScript DOM methods",
+          "Fully responsive layout for mobile, tablet, and desktop",
+          "Modern, minimalist interface with clean typography",
+          "One-click interaction for generating new content"
         ],
-        liveDemo: "",
-        repository: "https://github.com/GamaL-Ehab/Assignment8-Quote",
-        date: "2023-11-28"
+
+        challenges: [
+          {
+            problem: "Preventing the same quote from appearing twice in a row",
+            solution: "Implemented a logic check that stores the index of the previous quote and re-rolls the random number if it matches the current selection."
+          },
+          {
+            problem: "Maintaining layout stability with varying text lengths",
+            solution: "Applied CSS Flexbox and set minimum heights on the quote container to ensure the 'Generate' button remains in a consistent position."
+          }
+        ],
+
+        outcome: "A smooth and user-friendly tool that demonstrates foundational JavaScript skills and effective use of CSS frameworks for rapid UI development.",
+
+        links: {
+          live: "https://gamal-ehab.github.io/Assignment8-Quote/",
+          github: "https://github.com/GamaL-Ehab/Assignment8-Quote"
+        }
       }
     },
     {
-      title: "Daniels Portfolio Template",
-      image: "./images/projects/Daniels.png",
-      type: "Frontend",
-      shortDesc: "A sophisticated, responsive one-page portfolio template focusing on clean typography and modern CSS layouts.",
-      topTechs: ["HTML5", "CSS3", "Bootstrap"],
-      liveDemo: "",
-      date: "2024-02-05",
+      id: 12,
+      title: "Daniels Portfolio",
+      tagline: "A high-end, responsive personal portfolio template with modern UI effects",
+      thumbnail: "./images/projects/Daniels.png",
+      technologies: [
+        "HTML5",
+        "Bootstrap 5",
+        "FontAwesome"
+      ],
+      category: "Frontend",
+
       details: {
-        title: "Daniels - Creative Personal Portfolio",
-        image: "./images/projects/Daniels.png",
-        type: "Static Web Interface",
-        description: "Daniels is a professional-grade portfolio website designed for creatives. It showcases advanced CSS techniques including custom hover animations, sticky navigation, and a filterable gallery layout. The project emphasizes a 'mobile-first' philosophy, ensuring the sleek aesthetic and typography remain consistent across desktops, tablets, and smartphones.",
-        topTechs: ["CSS3", "HTML5", "Responsive Design"],
-        techStack: [
-          "HTML5",
-          "CSS3",
-          "Bootstrap 5",
-          "Google Fonts",
-          "Font Awesome",
-          "Media Queries"
+        overview: {
+          description: "Daniels is a professional-grade, single-page responsive portfolio designed for freelancers and creatives. The project showcases advanced CSS styling, Bootstrap's grid system, and JavaScript-driven interactivity. It features a sleek hero section with a typewriter effect, a filterable work gallery, and a clean, minimalist aesthetic that emphasizes content readability and smooth navigation.",
+          title: "Daniels Portfolio",
+          thumbnail: "./images/projects/Daniels.png",
+          duration: "1 week",
+          timeline: "2024",
+          status: "Completed"
+        },
+
+        role: {
+          position: "Frontend Developer",
+          responsibilities: [
+            "Architected the responsive layout using the Bootstrap 5 container system",
+            "Developed a custom 'Typewriter' effect using JavaScript to enhance the hero section",
+            "Implemented a dynamic 'ScrollSpy' feature for the navigation bar",
+            "Optimized images and assets for fast loading and cross-browser performance"
+          ]
+        },
+
+        techStack: {
+          frontend: [
+            "HTML5",
+            "CSS3 (Custom Media Queries)",
+            "Bootstrap 5",
+            "JavaScript (ES6+)",
+            "FontAwesome Icons"
+          ],
+          backend: [],
+          deployment: [
+            "GitHub Pages"
+          ]
+        },
+
+        features: [
+          "Fully responsive design for all screen sizes (Mobile, Tablet, Desktop)",
+          "Interactive Navigation with active-link tracking (ScrollSpy)",
+          "Animated 'Typed' header effect for job titles",
+          "Comprehensive sections: About, Services, Portfolio, Testimonials, and Contact",
+          "CSS Hover effects and smooth transition animations",
+          "Counter statistics section for professional milestones"
         ],
-        liveDemo: "",
-        repository: "https://github.com/GamaL-Ehab/Daniels",
-        date: "2024-02-05"
+
+        challenges: [
+          {
+            problem: "Achieving a smooth background-color transition on the navbar upon scrolling",
+            solution: "Wrote a JavaScript window scroll listener that toggles CSS classes based on vertical offset, combined with CSS transitions for a fluid effect."
+          },
+          {
+            problem: "Managing complex spacing and alignment across varying viewport widths",
+            solution: "Utilized a combination of Bootstrap's utility classes and custom media queries to ensure the portfolio grid remains visually balanced on small devices."
+          }
+        ],
+
+        outcome: "Successfully delivered a polished, modern portfolio landing page that effectively demonstrates high-level CSS proficiency and frontend layout skills.",
+
+        links: {
+          live: "https://gamal-ehab.github.io/Daniels/",
+          github: "https://github.com/GamaL-Ehab/Daniels"
+        }
       }
     },
     {
-      title: "Fokir Portfolio Template",
-      image: "./images/projects/Fokir.png",
-      type: "Frontend",
-      shortDesc: "A stylish, responsive personal portfolio website focusing on creative layouts and smooth CSS transitions.",
-      topTechs: ["HTML5", "CSS3", "Font Awesome"],
-      liveDemo: "",
-      date: "2024-01-15",
+      id: 13,
+      title: "Fokir Portfolio",
+      tagline: "A creative and visually striking personal landing page",
+      thumbnail: "./images/projects/Fokir.png",
+      technologies: [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      category: "Frontend",
+
       details: {
-        title: "Fokir - Personal & Creative Portfolio",
-        image: "./images/projects/Fokir.png",
-        type: "Static Web Interface",
-        description: "Fokir is a multi-section portfolio landing page designed to highlight professional identity. The project showcases mastery over CSS layout techniques, including the use of pseudo-elements for decorative UI touches, custom button styling, and a fully responsive grid that adjusts for mobile devices. It features a curated selection of Google Fonts and Font Awesome icons to enhance the visual storytelling.",
-        topTechs: ["CSS3", "HTML5", "Responsive Design"],
-        techStack: [
-          "HTML5",
-          "CSS3",
-          "Font Awesome",
-          "Google Fonts",
-          "Media Queries",
-          "Custom Animations"
+        overview: {
+          description: "Fokir is a premium personal portfolio template built with a strong focus on typography, spacing, and micro-interactions. The project emphasizes pixel-perfect frontend development, utilizing advanced CSS techniques to create complex layouts and engaging hover effects. It is designed to provide a smooth user experience across all devices while maintaining a high-end, artistic aesthetic.",
+          title: "Fokir Portfolio",
+          thumbnail: "./images/projects/Fokir.png",
+          duration: "1 week",
+          timeline: "2024",
+          status: "Completed"
+        },
+
+        role: {
+          position: "Frontend Developer",
+          responsibilities: [
+            "Transformed high-fidelity design concepts into clean, semantic HTML and CSS",
+            "Developed custom CSS animations and transitions for interactive UI elements",
+            "Created a fully responsive grid system without relying heavily on heavy frameworks",
+            "Implemented JavaScript for dynamic navigation and scrolling behaviors"
+          ]
+        },
+
+        techStack: {
+          frontend: [
+            "HTML5",
+            "CSS3 (Advanced Flexbox/Grid)",
+            "JavaScript (ES6+)",
+            "FontAwesome Icons"
+          ],
+          backend: [],
+          deployment: [
+            "GitHub Pages"
+          ]
+        },
+
+        features: [
+          "Responsive navigation bar with smooth scroll-to-section logic",
+          "Sophisticated CSS hover effects on portfolio items and social links",
+          "Interactive image gallery with custom overlays",
+          "Responsive typography and fluid layout design",
+          "Detailed 'Services' and 'Testimonials' sections",
+          "Contact section with styled form elements"
         ],
-        liveDemo: "",
-        repository: "https://github.com/GamaL-Ehab/Fokir",
-        date: "2024-01-15"
+
+        challenges: [
+          {
+            problem: "Creating complex overlapping design elements while maintaining responsiveness",
+            solution: "Utilized CSS relative and absolute positioning combined with Z-index management and media queries to ensure elements stack correctly on mobile."
+          },
+          {
+            problem: "Achieving high-performance animations for a large number of UI components",
+            solution: "Leveraged CSS hardware acceleration properties (like transform and opacity) instead of animating layout-heavy properties like height/width."
+          }
+        ],
+
+        outcome: "A polished, artistic frontend landing page that demonstrates deep mastery of CSS layout techniques and attention to detail.",
+
+        links: {
+          live: "https://gamal-ehab.github.io/Fokir/",
+          github: "https://github.com/GamaL-Ehab/Fokir"
+        }
       }
     },
     {
-      title: "Bondi Landing Page",
-      image: "./images/projects/Tailwind.png",
-      type: "Frontend",
-      shortDesc: "A modern creative agency landing page built with Tailwind CSS utility classes and a focus on clean, responsive UI.",
-      topTechs: ["Tailwind CSS", "HTML5", "Font Awesome"],
-      liveDemo: "",
-      date: "2024-04-10",
+      id: 14,
+      title: "Tailwind Landing Page",
+      tagline: "A utility-first approach to modern responsive web design",
+      thumbnail: "./images/projects/Tailwind.png",
+      technologies: [
+        "HTML5",
+        "Tailwind CSS",
+        "JavaScript"
+      ],
+      category: "Frontend",
+
       details: {
-        title: "Bondi - Creative UI Design",
-        image: "./images/projects/Tailwind.png",
-        type: "Static Web Interface",
-        description: "This project is a high-fidelity implementation of the Bondi landing page design. Developed to practice utility-first styling, it utilizes the Tailwind CSS CDN for rapid prototyping and responsive layout management. The page includes a fixed navigation bar, a hero section with a call-to-action, a multi-column services area, and a curated work gallery, all styled with precision using inline Tailwind classes.",
-        topTechs: ["Tailwind CSS", "HTML5", "Responsive Web Design"],
-        techStack: [
-          "HTML5",
-          "Tailwind Play CDN",
-          "Font Awesome (Icons)",
-          "Google Fonts (Roboto)",
-          "Responsive Grid System"
+        overview: {
+          description: "A sleek and modern landing page project focused on mastering the utility-first CSS paradigm. This project explores the power of Tailwind CSS to build complex, responsive layouts directly within the HTML, eliminating the need for traditional bloated CSS files. It demonstrates high-performance styling, custom theme configurations, and fluid design transitions using only utility classes.",
+          title: "Tailwind Landing Page",
+          thumbnail: "./images/projects/Tailwind.png",
+          duration: "1 week",
+          timeline: "2024",
+          status: "Completed"
+        },
+
+        role: {
+          position: "Frontend Developer",
+          responsibilities: [
+            "Architected a mobile-first responsive layout using Tailwind's grid and flexbox utilities",
+            "Configured PostCSS and Tailwind build processes for production optimization",
+            "Implemented custom color palettes and spacing scales via tailwind.config.js",
+            "Developed interactive UI components including navigation menus and hover-state buttons"
+          ]
+        },
+
+        techStack: {
+          frontend: [
+            "HTML5",
+            "Tailwind CSS",
+            "JavaScript (ES6+)",
+            "PostCSS"
+          ],
+          backend: [],
+          deployment: [
+            "GitHub Pages",
+            "Vercel"
+          ]
+        },
+
+        features: [
+          "Utility-first styling for maximum performance and maintainability",
+          "Fully responsive design utilizing Tailwind's breakpoint system",
+          "Custom theme configuration for consistent branding",
+          "Modern UI components with smooth hover and focus transitions",
+          "Optimized production build with CSS purging to minimize file size"
         ],
-        liveDemo: "",
-        repository: "https://github.com/GamaL-Ehab/tailwind-first",
-        date: "2024-04-10"
+
+        challenges: [
+          {
+            problem: "Adapting to the utility-first mindset versus traditional BEM/Sass structures",
+            solution: "Embraced component abstraction and used the @apply directive in specific cases to keep HTML clean while maintaining the flexibility of utility classes."
+          },
+          {
+            problem: "Managing consistent spacing and typography across different sections",
+            solution: "Leveraged the tailwind.config.js file to define a global design system, ensuring uniform margins, paddings, and font sizes throughout the app."
+          }
+        ],
+
+        outcome: "A high-performance, visually appealing landing page that showcases the efficiency and scalability of utility-first CSS in modern frontend workflows.",
+
+        links: {
+          live: "https://gamal-ehab.github.io/tailwind-first/",
+          github: "https://github.com/GamaL-Ehab/tailwind-first"
+        }
       }
-    },
-    // {
-    //   title: "Angular Fundamentals Project",
-    //   image: "https://opengraph.githubassets.com/1/GamaL-Ehab/Angular-First",
-    //   type: "Frontend Web Application",
-    //   shortDesc: "An introductory Angular application exploring core framework concepts like components, data binding, and modular structure.",
-    //   topTechs: ["Angular", "TypeScript", "HTML5"],
-    //   liveDemo: "",
-    //   date: "2024-03-01",
-    //   details: {
-    //     title: "Angular Core Concepts Explorer",
-    //     image: "https://opengraph.githubassets.com/1/GamaL-Ehab/Angular-First",
-    //     type: "Single Page Application (SPA)",
-    //     description: "This project serves as a foundational exploration of the Angular framework. It implements essential features such as one-way and two-way data binding, structural directives (*ngIf, *ngFor), and basic component interaction. The project demonstrates a clean separation of concerns by utilizing TypeScript for logic, HTML for templates, and CSS for component-specific styling.",
-    //     topTechs: ["Angular", "TypeScript", "CSS3"],
-    //     techStack: [
-    //       "Angular",
-    //       "TypeScript",
-    //       "HTML5",
-    //       "CSS3",
-    //       "Angular CLI",
-    //       "NPM"
-    //     ],
-    //     liveDemo: "",
-    //     repository: "https://github.com/GamaL-Ehab/Angular-First",
-    //     date: "2024-03-01"
-    //   }
-    // },
+    }
   ]
 }

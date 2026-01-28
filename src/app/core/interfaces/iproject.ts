@@ -1,23 +1,50 @@
 export interface IProject {
-    title: string;
-    image: string;
-    type: string;
-    shortDesc: string;
-    topTechs: [string, string, string]; // Fixed-size array for topTechs
-    liveDemo: string;
-    date: string;
-    details: IProjectDetail;
+    id: number
+    title: string
+    tagline: string
+    thumbnail: string
+    technologies: string[]
+    category: string
+    details: IProjectDetails
 }
 
-export interface IProjectDetail {
-    title: string;
-    image: string;
-    type: string;
-    description: string;
-    topTechs: string[];
-    techStack: string[];
-    liveDemo: string;
-    repository: string;
-    date: string;
+export interface IProjectDetails {
+    overview: Overview
+    role: Role
+    techStack: any
+    features: string[]
+    challenges: Challenge[]
+    outcome: string
+    links: Links
+}
+
+export interface Overview {
+    description: string
+    title: string
+    thumbnail: string
+    duration: string
+    timeline: string
+    status: string
+}
+
+export interface Role {
+    position: string
+    responsibilities: string[]
+}
+
+export interface TechStack {
+    frontend: string[]
+    backend: any[]
+    deployment: string[]
+}
+
+export interface Challenge {
+    problem: string
+    solution: string
+}
+
+export interface Links {
+    live: string
+    github: string
 }
 

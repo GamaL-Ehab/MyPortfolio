@@ -1,35 +1,95 @@
-<div id="extra-large-modal" class="overlay modal overlay-open:opacity-100 overlay-open:duration-300 hidden"
-    role="dialog" tabindex="-1">
-    <div class="modal-dialog modal-dialog-xl">
+<div id="fullscreen-modal" class="overlay modal overlay-open:opacity-100 overlay-open:duration-300 hidden" role="dialog"
+    tabindex="-1">
+    <div class="modal-dialog max-w-none">
         <div class="modal-content h-fit max-h-none">
             <div class="modal-header">
-                <h3 class="modal-title">{{project?.title}}</h3>
+                <h2 class="modal-title">{{project?.overview?.title}}</h2>
                 <button type="button" class="btn btn-text btn-circle btn-sm absolute end-3 top-3" aria-label="Close"
-                    data-overlay="#extra-large-modal">
+                    data-overlay="#fullscreen-modal">
                     <span class="icon-[tabler--x] size-4"></span>
                 </button>
             </div>
             <div class="modal-body">
-                <div class="flex flex-wrap flex-col">
-                    <div class="w-full max-h-1/4 p-5">
-                        <img [src]="project?.image" [alt]="project?.title" class="rounded-3xl aspect-7/3 object-cover">
+                <div class="flex flex-wrap max-md:flex-col justify-between">
+                    <div class="flex flex-wrap flex-col md:w-7/12 h-full">
+                        <div class="w-full max-h-1/4 p-5 pb-0">
+                            <img [src]="project?.overview?.thumbnail" [alt]="project?.overview?.title"
+                                class="rounded-3xl aspect-7/3 object-cover mx-auto">
+                        </div>
+                        <div class="p-5">
+                            <p class="font-semibold mb-3">{{project?.overview?.description}}</p>
+                            <p><span class="font-semibold text-lg">outcome:</span> {{project?.outcome}}</p>
+
+                            <h3 class="font-semibold text-lg my-2">Key Features:</h3>
+                            <ul class="flex flex-wrap gap-2">
+                                @for(feature of project?.features ; track $index){
+                                <li
+                                    class="rounded-2xl py-2 px-5 border border-primary glass hover:bg-black duration-300 hover:text-white intersect:motion-scale-in-0 motion-delay-100 cursor-pointer">
+                                    {{feature}}</li>
+                                }
+                            </ul>
+
+                        </div>
                     </div>
-                    <div class="p-5">
-                        <p class="font-semibold">{{project?.description}}</p>
-                        <ul class="flex flex-wrap gap-2 mt-5">
-                            @for(t of project?.techStack ; track $index){
-                            <li class="px-3 py-1 border rounded-3xl bg-gray-200 shadow">{{t}}</li>
+                    <div class="md:w-5/12 flex flex-col justify-between rounded-2xl p-5 bg-gray-100">
+                        <div>
+                            <div>
+                                <h4 class="font-semibold mb-3"><span class="text-lg">Role:</span>
+                                    {{project?.role?.position}}
+                                </h4>
+                                <h5 class="font-semibold text-lg">Responsibilities:</h5>
+                                <ul>
+                                    @for(r of project?.role?.responsibilities; track $index){
+                                    <li
+                                        class="w-fit my-2 rounded-2xl py-2 px-5 border border-primary glass hover:bg-black duration-300 hover:text-white intersect:motion-scale-in-0 motion-delay-100 cursor-pointer">
+                                        {{r}}</li>
+                                    }
+                                </ul>
+                            </div>
+
+                            <h3 class="font-semibold text-lg mt-3 mb-1">Tech Stack:</h3>
+                            @if(project?.techStack?.frontend.length > 0){
+                            <h4 class="font-semibold mb-2">Frontend: </h4>
+                            <ul class="flex flex-wrap gap-2 mb-2">
+                                @for(t of project?.techStack?.frontend ; track $index){
+                                <li
+                                    class="rounded-2xl py-2 px-5 border border-primary glass hover:bg-black duration-300 hover:text-white intersect:motion-scale-in-0 motion-delay-100 cursor-pointer">
+                                    {{t}}</li>
+                                }
+                            </ul>
                             }
-                        </ul>
-                        <div class="flex justify-end gap-2 mt-8">
-                            <a [href]="project?.repository" target="_blank">
+                            @if(project?.techStack?.backend.length > 0){
+                            <h4 class="font-semibold mb-2">Backend: </h4>
+                            <ul class="flex flex-wrap gap-2 mb-2">
+                                @for(t of project?.techStack?.backend ; track $index){
+                                <li
+                                    class="rounded-2xl py-2 px-5 border border-primary glass hover:bg-black duration-300 hover:text-white intersect:motion-scale-in-0 motion-delay-100 cursor-pointer">
+                                    {{t}}</li>
+                                }
+                            </ul>
+                            }
+                            @if(project?.techStack?.deployment.length > 0){
+                            <h4 class="font-semibold mb-2">Deployment: </h4>
+                            <ul class="flex flex-wrap gap-2 mb-2">
+                                @for(t of project?.techStack?.deployment ; track $index){
+                                <li
+                                    class="rounded-2xl py-2 px-5 border border-primary glass hover:bg-black duration-300 hover:text-white intersect:motion-scale-in-0 motion-delay-100 cursor-pointer">
+                                    {{t}}</li>
+                                }
+                            </ul>
+                            }
+                        </div>
+
+
+                        <div class="flex justify-end gap-2">
+                            <a [href]="project?.links?.github" target="_blank">
                                 <button class="btn btn-circle  [--btn-color:#2b3137] text-white"
                                     aria-label="Github Icon Button">
                                     <span class="icon-[tabler--brand-github] size-4.5 shrink-0"></span>
                                 </button>
                             </a>
-                            <a [href]="project?.liveDemo" target="_blank">
-                                <button class="btn btn-primary btn-soft rounded-full min-w-1/2">live Demo
+                            <a [href]="project?.links?.live" target="_blank">
+                                <button class="btn btn-primary rounded-full min-w-1/2">live Demo
                                     <span class="material-symbols-outlined">
                                         open_in_new
                                     </span>
@@ -40,10 +100,6 @@
                 </div>
 
             </div>
-            <!-- <div class="modal-footer">
-                <button type="button" class="btn btn-soft btn-secondary"
-                    data-overlay="#extra-large-modal">Close</button>
-            </div> -->
         </div>
     </div>
 </div>

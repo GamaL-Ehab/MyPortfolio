@@ -1,5 +1,5 @@
-import { Component, Input, signal } from '@angular/core';
-import { IProjectDetail } from '../../core/interfaces/iproject';
+import { Component, Input } from '@angular/core';
+import { IProjectDetails } from '../../core/interfaces/iproject';
 
 
 @Component({
@@ -10,6 +10,6 @@ import { IProjectDetail } from '../../core/interfaces/iproject';
 })
 export class ProjectDetails {
 
-  @Input() project!: IProjectDetail;
+  @Input() project!: IProjectDetails;
 }
 
