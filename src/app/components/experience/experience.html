@@ -3,7 +3,36 @@
     <h2 class="text-4xl lg:text-5xl font-bold text-center">Professional Experience</h2>
     <div class="md:w-3/4 mx-auto px-3 lg:px-10 flex flex-wrap my-5 ">
         <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical timeline-centered">
-            <!-- timeline item 1-->
+            <!-- timeline item-->
+            <li class="timeline-shift">
+                <div class="timeline-middle h-16">
+                    <span class="bg-blue-700/60 flex size-8 items-center justify-center rounded-full">
+                        <span class="icon-[mdi--web] text-white size-5"></span>
+                    </span>
+                </div>
+                <div class="timeline-end mt-6 px-1 md:mt-8">
+                    <div class="text-base-content/50 text-sm font-normal">(3, FEB, 2026 - 30, MAR, 2026)</div>
+                </div>
+                <div class="timeline-start me-4 mb-8">
+                    <div class="card intersect:motion-preset-slide-right motion-delay-200">
+                        <div class="card-body gap-4">
+                            <h5 class="card-title text-lg">MEAN Stack: Web Developer Career Accelerator (210 Hours)</h5>
+                            <p>
+                                <span class="block font-bold">Creativa Innovation Hubs, NTI</span>
+                                successfully completed the MEAN Stack: Web Developer Career Accelerator (210 Hours), an
+                                intensive full-stack development program focused on building scalable and
+                                production-ready web applications.
+                            </p>
+                            <button (click)="setIndex(2)" disabled class="btn btn-soft btn-primary w-fit"
+                                aria-haspopup="dialog" aria-expanded="false" aria-controls="scroll-inside-modal"
+                                data-overlay="#scroll-inside-modal">Certificate</button>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+            </li>
+            <!-- /timeline item -->
+            <!-- timeline item-->
             <li>
                 <div class="timeline-middle h-16">
                     <span class="bg-primary/50 flex size-8 items-center justify-center rounded-full">
@@ -12,7 +41,7 @@
                     </span>
                 </div>
                 <div class="timeline-start me-4 mt-8 max-md:pt-2">
-                    <div class="text-base-content/50 text-sm font-normal">(SEP, 2024 - DEC, 2025)</div>
+                    <div class="text-base-content/50 text-sm font-normal">(7, SEP, 2024 - 18, DEC, 2025)</div>
                 </div>
                 <div class="timeline-end ms-4 mb-8">
                     <div class="card intersect:motion-preset-slide-left motion-delay-100">
@@ -32,8 +61,8 @@
                 </div>
                 <hr />
             </li>
-            <!-- /timeline item 1-->
-            <!-- timeline item 2-->
+            <!-- /timeline item -->
+            <!-- timeline item -->
             <li class="timeline-shift">
                 <div class="timeline-middle h-16">
                     <span class="bg-success/50 flex size-8 items-center justify-center rounded-full">
@@ -61,7 +90,7 @@
                 </div>
                 <hr />
             </li>
-            <!-- /timeline item 2-->
+            <!-- /timeline item -->
         </ul>
     </div>
 </section>

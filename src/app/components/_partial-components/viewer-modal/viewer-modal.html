@@ -10,7 +10,9 @@
                 </button>
             </div>
             <div class="modal-body">
-                <img [src]="src" alt="">
+                @for(s of src ; track s){
+                <img [src]="s" alt="Certificate">
+                }
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-soft btn-secondary"

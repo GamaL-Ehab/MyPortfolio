@@ -12,15 +12,19 @@ export class Experience {
   certificates = [
     {
       id: 1,
-      src: "./images/Certificates/frontend-route-certificate.png"
+      src: ["./images/Certificates/frontend-route-certificate.png", "./images/Certificates/backend-route-certificate.png"]
     },
     {
       id: 2,
-      src: "/images/Certificates/Graduation certificate.jpeg"
+      src: ["/images/Certificates/Graduation certificate.jpeg"]
+    },
+    {
+      id: 3,
+      src: ["/images/Certificates/Graduation certificate.jpeg"]
     },
   ]
 
-  src: string = '';
+  src!: string[];
   setIndex(index: number) {
     this.src = this.certificates[index].src;
   }

@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ViewerModal {
 
-  @Input() src: string | undefined;
+  @Input() src!: string[];
 }
